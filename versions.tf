@@ -15,5 +15,12 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = ">= 2.10"
     }
+    
+    backend "s3" {
+      bucket = "tfstate-dev-bucket"
+      key    = "terraform.tfstate"
+      region = "eu-west-2"
+    }
+    
   }
 }
